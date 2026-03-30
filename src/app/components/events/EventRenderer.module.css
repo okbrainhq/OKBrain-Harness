@@ -1,0 +1,217 @@
+/* Date Separator */
+.dateSeparator {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.dateSeparatorFirst {
+    margin-top: 0;
+}
+
+/* User Meta (model name + timestamp) */
+.userMeta {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.userTimestamp {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+/* Thoughts Spacing */
+.thoughtsSpacing {
+    margin-bottom: 12px;
+}
+
+/* Thinking Button (streaming) */
+.thinkingButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    transition: all 0.15s ease;
+}
+
+.thinkingButton:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--border-hover);
+}
+
+/* Thinking Arrow */
+.thinkingArrow {
+    font-size: 0.7rem;
+    opacity: 0.6;
+    margin-left: 4px;
+}
+
+/* Expanded Thoughts Panel */
+.expandedThoughtsPanel {
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-top: 8px;
+    line-height: 1.5;
+    border: 1px solid var(--border);
+}
+
+/* Typing Indicator */
+.typingIndicatorStyles {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 12px 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.typingIndicatorIcon {
+    display: flex;
+    align-items: center;
+}
+
+.streamOutputItem {
+    min-height: 1px;
+}
+
+.messageStatusInline {
+    display: flex;
+    align-items: baseline;
+}
+
+/* Model Tag */
+.modelTag {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+/* Thought For Button (completed) */
+.thoughtForButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    transition: all 0.15s ease;
+    opacity: 0.85;
+}
+
+.thoughtForButton:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--border-hover);
+    opacity: 1;
+}
+
+/* Thought For Arrow */
+.thoughtForArrow {
+    font-size: 0.65rem;
+    opacity: 0.6;
+}
+
+/* Feedback */
+.feedbackContainer {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+    margin-left: -3px;
+    justify-content: flex-start;
+}
+
+.feedbackButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    opacity: 0.4;
+}
+
+.feedbackButtonActive {
+    color: var(--text-secondary);
+    opacity: 1;
+}
+
+.feedbackButton:hover {
+    opacity: 1;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+/* Inline Tool Card */
+.inlineToolCard {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    margin-bottom: 8px;
+}
+
+.inlineToolIcon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--text-muted);
+}
+
+.inlineToolIconRunning {
+    animation: inlineToolPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes inlineToolPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+.inlineToolName {
+    font-weight: 500;
+}
+
+/* File Attached Banner (for remote file API uploads like Gemini) */
+.fileAttachedBanner {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    margin-top: 8px;
+}

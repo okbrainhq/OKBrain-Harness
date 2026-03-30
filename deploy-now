@@ -1,0 +1,27 @@
+# deploy-now
+# Purpose: Triggers the deployment script on the remote server via SSH.
+# Usage: ./deploy-now [USER@HOST]
+
+set -e
+
+# Read config from .deploy file
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+if [ -f "$SCRIPT_DIR/.deploy" ]; then
+    source "$SCRIPT_DIR/.deploy"
+fi
+
+REMOTE_HOST=${1:-"$DEPLOY_HOST"}
+
+if [ -z "$REMOTE_HOST" ]; then
+    echo "Error: No host specified and DEPLOY_HOST not set in .deploy file."
+    echo "Usage: ./deploy-now [USER@HOST]"
+    echo "Or create a .deploy file in the project root."
+    exit 1
+fi
+
+echo "Deploying to $REMOTE_HOST..."
+
+# Execute the decoupled deployment script located in user's home directory
+ssh "$REMOTE_HOST" "~/deploy.sh"
+
+echo "Done!"

@@ -1,0 +1,66 @@
+{
+  "src/app/api/chat/": "chat",
+  "src/components/Chat": "chat",
+  "src/workers/chat-worker.ts": "chat",
+  "src/workers/chat-yield-scheduler-worker.ts": "chat",
+  "src/lib/ai/context.ts": "chat",
+  "src/lib/ai/summarize.ts": "chat",
+
+  "src/app/api/docs/": "docs",
+  "src/components/Document": "docs",
+  "src/components/TiptapEditor": "docs",
+
+  "src/lib/ai/adapters/": "providers",
+  "src/lib/ai/providers/": "providers",
+
+  "src/lib/ai/tools/": "tools",
+  "src/components/events/": "tools",
+  "src/lib/ai/registry/": "tools",
+  "src/workers/shell-command-worker.ts": "tools",
+
+  "src/lib/jobs/": "jobs",
+  "src/app/api/jobs/": "jobs",
+  "src/workers/": "jobs",
+
+  "src/lib/ai/facts.ts": "facts",
+  "src/lib/ai/fact-sheet.ts": "facts",
+  "src/lib/periodic/": "facts",
+  "src/workers/fact-extraction-worker.ts": "facts",
+  "src/workers/fact-sheet-rebuild-worker.ts": "facts",
+  "src/app/api/facts/": "facts",
+  "src/app/api/fact-sheet/": "facts",
+
+  "src/app/api/folders/": "org",
+  "src/components/MoveToFolder": "org",
+
+  "src/components/ChatLayout": "ui",
+  "src/components/Sidebar": "ui",
+  "src/components/Highlights": "ui",
+  "src/workers/highlights-worker.ts": "ui",
+
+  "src/app/api/share/": "share",
+  "src/components/Share": "share",
+  "src/app/s/": "share",
+
+  "src/app/api/auth/": "chat",
+  "src/lib/auth.ts": "chat",
+  "src/app/api/conversations/": "chat",
+
+  "src/app/api/memory/": "memory",
+
+  "src/app/api/filebrowser/": "filebrowser",
+  "src/lib/sandbox-fs.ts": "filebrowser",
+  "src/lib/db/db-file-browsers.ts": "filebrowser",
+  "src/app/(main)/filebrowser/": "filebrowser",
+
+  "src/app/api/apps/": "apps",
+  "src/lib/db/db-apps.ts": "apps",
+  "src/app/(main)/app/": "apps",
+  "src/lib/ai/tools/discover-apps.ts": "apps",
+  "src/lib/ai/tools/app-info.ts": "apps",
+  "src/lib/ai/tools/run-app.ts": "apps",
+  "src/lib/ai/apps-cache.ts": "apps",
+  "src/workers/run-app-worker.ts": "apps",
+  "src/lib/ai/tools/coding-tools.ts": "apps",
+  "src/app/components/events/tool-renderers/CodingToolRenderer.tsx": "apps"
+}

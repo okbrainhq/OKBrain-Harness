@@ -1,0 +1,6 @@
+/* Login Page - using :global() to keep class names for e2e tests */
+
+:global(.login-container) {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}

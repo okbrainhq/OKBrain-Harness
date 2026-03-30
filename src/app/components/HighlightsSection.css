@@ -1,0 +1,200 @@
+.highlights-section {
+  margin-bottom: 24px;
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlights-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.highlights-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.highlights-arrow {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.highlights-arrow:hover:not(:disabled) {
+  opacity: 1;
+}
+
+.highlights-arrow:disabled {
+  opacity: 0.15;
+  cursor: default;
+}
+
+.highlights-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.highlights-content,
+.highlights-content p,
+.highlights-content li,
+.highlights-content .markdown-paragraph,
+.highlights-content .markdown-list-item {
+  color: var(--text-muted) !important;
+}
+
+.highlights-content strong,
+.highlights-content .markdown-strong {
+  color: var(--text-secondary) !important;
+}
+
+.highlights-content .markdown-citation {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-muted) !important;
+  opacity: 0.8;
+}
+
+.highlights-content p {
+  margin: 0;
+}
+
+.highlights-content .markdown-list {
+  margin: 8px 0;
+  padding-left: 1.5em;
+}
+
+.highlights-content .markdown-list-item {
+  margin-bottom: 4px;
+}
+
+.highlights-empty {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.highlights-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.highlight-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.highlight-action-btn:hover:not(:disabled) {
+  opacity: 1;
+}
+
+.highlight-action-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.highlights-error {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Edit Modal */
+.highlight-edit-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.highlight-edit-modal {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.highlight-edit-modal h3 {
+  font-size: 1rem;
+  margin: 0 0 16px;
+  color: var(--text-primary);
+}
+
+.highlight-edit-modal textarea {
+  width: 100%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: none;
+}
+
+.highlight-edit-modal textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.highlight-edit-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .highlights-content {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .highlights-content .markdown-list {
+    margin: 4px 0;
+  }
+}

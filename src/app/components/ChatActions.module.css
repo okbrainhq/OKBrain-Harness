@@ -1,0 +1,98 @@
+/* Action Container */
+.actionContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 16px 0;
+  margin-top: 8px;
+}
+
+/* Verify Group */
+.verifyGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.verifySplitButton {
+  display: flex;
+  position: relative;
+}
+
+.verifyButtonMainOverride {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  padding-right: 10px;
+}
+
+/* Verify Button Arrow */
+.verifyButtonArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-left: 1px solid var(--border-light);
+  border-radius: 0 4px 4px 0;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 0 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.verifyButtonArrow:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* Menu Overlay */
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+/* Verify Menu Dropdown */
+.verifyMenuDropdown {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 4px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 160px;
+  padding: 4px;
+  overflow: hidden;
+}
+
+/* Verify Menu Item */
+.verifyMenuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.verifyMenuItem:hover {
+  background: var(--bg-tertiary);
+}
+
+/* Verify Menu Check */
+.verifyMenuCheck {
+  opacity: 0.7;
+}

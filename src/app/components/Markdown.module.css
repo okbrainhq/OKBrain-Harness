@@ -1,0 +1,497 @@
+/* Markdown styling - used in message rendering */
+
+:global(.message-text p) {
+  margin-bottom: 12px;
+}
+
+:global(.message-text p:last-child) {
+  margin-bottom: 0;
+}
+
+:global(.message-text code) {
+  font-family: 'Lilex', monospace;
+  background: var(--bg-tertiary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: var(--text-primary);
+}
+
+:global(.message-text pre) {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: 12px 0;
+}
+
+:global(.message-text pre code) {
+  background: none;
+  padding: 0;
+}
+
+:global(.message-text ul),
+:global(.message-text ol) {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+:global(.message-text li) {
+  margin-bottom: 6px;
+}
+
+/* Improved markdown list rendering */
+:global(.markdown-list) {
+  margin: 12px 0;
+  padding-left: 24px;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+:global(.markdown-list ol) {
+  list-style-type: decimal;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+:global(.markdown-list-item) {
+  margin-bottom: 10px;
+  line-height: 1.7;
+  display: list-item;
+  list-style-position: outside;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Handle paragraphs inside list items */
+:global(.markdown-list-item p) {
+  margin: 0;
+  display: inline;
+}
+
+:global(.markdown-list-item p:not(:last-child)) {
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Handle nested elements */
+:global(.markdown-list-item>*:first-child) {
+  margin-top: 0;
+}
+
+:global(.markdown-list-item>*:last-child) {
+  margin-bottom: 0;
+}
+
+:global(.markdown-list-item strong),
+:global(.markdown-strong) {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Ensure paragraphs before lists are properly separated */
+:global(.markdown-paragraph+.markdown-list) {
+  margin-top: 12px;
+}
+
+/* Ensure text doesn't overflow */
+:global(.markdown-list-item),
+:global(.markdown-paragraph) {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Fix inline elements in list items */
+:global(.markdown-list-item>strong),
+:global(.markdown-list-item>em),
+:global(.markdown-list-item>code) {
+  display: inline;
+}
+
+/* Paragraphs, inline code, and code blocks handled by ContentStyles.module.css */
+
+:global(.markdown-code) {
+  font-family: 'Lilex', monospace;
+  font-variant-ligatures: none;
+  font-feature-settings: normal;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+/* Ensure all code elements use proper monospace rendering with equal character dimensions */
+:global(.markdown-pre) :global(.hljs),
+:global(.markdown-pre) :global(code),
+:global(.markdown-pre) :global(span) {
+  font-family: 'Lilex', monospace !important;
+  font-variant-ligatures: none !important;
+  font-feature-settings: normal !important;
+  letter-spacing: 0 !important;
+}
+
+:global(.message-text h1),
+:global(.message-text h2),
+:global(.message-text h3) {
+  margin: 20px 0 12px;
+  font-weight: 600;
+}
+
+:global(.message-text h1) {
+  font-size: 1.5rem;
+}
+
+:global(.message-text h2) {
+  font-size: 1.25rem;
+}
+
+:global(.message-text h3) {
+  font-size: 1.1rem;
+}
+
+:global(.message-text blockquote) {
+  border-left: 3px solid var(--border-light);
+  padding-left: 16px;
+  margin: 12px 0;
+  color: var(--text-secondary);
+}
+
+/* HR handled by ContentStyles.module.css */
+
+/* Tables - Chat-specific customizations adopting the premium Tiptap aesthetic */
+:global(.markdown-table-wrapper) {
+  position: relative;
+  overflow-x: auto;
+  margin: 20px 0;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-hover);
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+
+  /* Force high-quality clipping */
+  clip-path: inset(0 round 8px);
+  transform: translateZ(0);
+  isolation: isolate;
+  contain: paint;
+}
+
+/* Slim scrollbar for tables */
+:global(.markdown-table-wrapper::-webkit-scrollbar) {
+  height: 4px;
+}
+
+:global(.markdown-table-wrapper::-webkit-scrollbar-track) {
+  background: transparent;
+  margin: 0 8px;
+}
+
+:global(.markdown-table-wrapper::-webkit-scrollbar-thumb) {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+:global(.markdown-table-wrapper::-webkit-scrollbar-thumb:hover) {
+  background: var(--text-muted);
+}
+
+:global(.markdown-table) {
+  width: 100%;
+  border-collapse: separate !important;
+  border-spacing: 0;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  font-size: 0.9rem !important;
+  /* Double-clip at table level */
+  border-radius: 7px !important;
+  overflow: hidden !important;
+}
+
+:global(.markdown-th),
+:global(.markdown-td) {
+  padding: 12px 16px !important;
+  text-align: left !important;
+  color: var(--text-primary) !important;
+  vertical-align: top !important;
+  line-height: 1.6 !important;
+  border-right: 1px solid var(--border-light) !important;
+  border-bottom: 1px solid var(--border-light) !important;
+}
+
+:global(.markdown-th) {
+  font-weight: 600 !important;
+  background: var(--bg-tertiary) !important;
+  border-bottom: 2px solid var(--border) !important;
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.05em !important;
+  color: var(--text-secondary) !important;
+  /* Remove any background bleeding */
+  background-clip: padding-box !important;
+}
+
+/* Explicitly round the header cell corners */
+:global(.markdown-th:first-child) {
+  border-top-left-radius: 7px !important;
+}
+
+:global(.markdown-th:last-child) {
+  border-top-right-radius: 7px !important;
+}
+
+:global(.markdown-th:last-child),
+:global(.markdown-td:last-child) {
+  border-right: none !important;
+}
+
+:global(.markdown-tr:last-child td) {
+  border-bottom: none !important;
+}
+
+:global(.markdown-td:first-child) {
+  font-weight: 500;
+}
+
+:global(.markdown-tbody tr:hover) {
+  background: var(--bg-tertiary) !important;
+}
+
+/* Responsive table on mobile */
+@media (max-width: 768px) {
+  :global(.markdown-table-wrapper) {
+    margin: 16px -16px;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    clip-path: none !important;
+  }
+
+  :global(.markdown-table) {
+    border-radius: 0 !important;
+  }
+
+  :global(.markdown-th:first-child),
+  :global(.markdown-th:last-child) {
+    border-radius: 0 !important;
+  }
+
+  :global(.markdown-th),
+  :global(.markdown-td) {
+    padding: 10px 12px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+:global(.message-text a) {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: #888;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+:global(.message-text .markdown-link) {
+  display: inline-flex;
+  max-width: min(100%, 22rem);
+  vertical-align: bottom;
+}
+
+:global(.message-text .markdown-link-label) {
+  display: inline-block;
+  max-width: min(100%, 28ch);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:global(.message-text .markdown-link-domain) {
+  max-width: min(100%, 18ch);
+  white-space: nowrap;
+}
+
+:global(.message-text .markdown-link-domain .markdown-link-label) {
+  max-width: 100%;
+}
+
+:global(.markdown-paragraph) {
+  white-space: pre-wrap;
+}
+
+:global(.markdown-list-item),
+:global(.markdown-paragraph) {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+:global(.message-text .markdown-long-token) {
+  display: inline-block;
+  max-width: min(100%, 14rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+  cursor: help;
+}
+
+@media (max-width: 768px) {
+  :global(.message-text .markdown-link) {
+    max-width: min(100%, 12rem);
+  }
+
+  :global(.message-text .markdown-link-label) {
+    max-width: min(100%, 16ch);
+  }
+
+  :global(.message-text .markdown-long-token) {
+    max-width: min(100%, 8rem);
+    font-size: 0.9em;
+  }
+
+  :global(.message-text .markdown-link-domain) {
+    max-width: min(100%, 14ch);
+  }
+}
+
+:global(.markdown-citation) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6em;
+  font-weight: 700;
+  vertical-align: super;
+  margin: 0 1px;
+  min-width: 14px;
+  height: 14px;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-radius: 3px;
+  border: 1px solid var(--border-light);
+  line-height: 1;
+  padding: 0 4px;
+  text-decoration: none !important;
+}
+
+:global(.markdown-citation:hover) {
+  background: var(--bg-hover);
+  border-color: var(--text-secondary);
+  opacity: 1 !important;
+  text-decoration: none !important;
+}
+
+:global(.message-text a:hover) {
+  opacity: 0.7;
+}
+
+:global(.message-text a:visited) {
+  color: var(--accent-cyan);
+}
+
+:global(.message-text a:active) {
+  color: var(--accent-cyan);
+}
+
+/* Message Sources */
+:global(.message-sources) {
+  margin-top: 12px;
+  padding-top: 12px;
+}
+
+:global(.message-sources-list) {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  align-items: center;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+:global(.message-sources-list::-webkit-scrollbar) {
+  height: 4px;
+}
+
+:global(.message-sources-list::-webkit-scrollbar-track) {
+  background: transparent;
+}
+
+:global(.message-sources-list::-webkit-scrollbar-thumb) {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+:global(.message-sources-list::-webkit-scrollbar-thumb:hover) {
+  background: var(--text-muted);
+}
+
+:global(.message-source-link) {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+:global(.message-source-link:hover) {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+  border-color: var(--border-light);
+  text-decoration: none !important;
+}
+
+:global(.message-source-link:visited) {
+  text-decoration: none !important;
+}
+
+:global(.message-source-link:active) {
+  text-decoration: none !important;
+}
+
+:global(.message-source-text) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 180px;
+  text-decoration: none !important;
+}
+
+/* Citation Badge Style */
+:global(.citation-badge) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  min-width: 16px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-decoration: none;
+  vertical-align: super;
+  /* Superscript positioning */
+  margin-left: 2px;
+  margin-right: 1px;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+:global(.citation-badge:hover) {
+  background-color: var(--bg-hover);
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+  text-decoration: none;
+  transform: translateY(-1px);
+}

@@ -1,0 +1,238 @@
+/* Shared content styles for both chat messages and TipTap editor */
+
+/* Paragraphs */
+:global(.content-styles) p {
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin: 0 0 12px 0;
+}
+
+:global(.content-styles) p:last-child {
+  margin-bottom: 0;
+}
+
+/* Inline Code */
+:global(.content-styles) code {
+  font-family: 'Lilex', 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', monospace;
+  background: var(--bg-tertiary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: var(--text-primary);
+  font-variant-ligatures: none;
+  font-feature-settings: normal;
+  letter-spacing: 0;
+}
+
+/* Code Blocks */
+:global(.content-styles) pre {
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: var(--code-block-margin, 12px) 0;
+}
+
+:global(.content-styles) pre code {
+  background: none !important;
+  padding: 0;
+  font-size: 0.9em;
+  color: var(--text-primary);
+}
+
+/* Lists */
+:global(.content-styles) ul,
+:global(.content-styles) ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+:global(.content-styles) li {
+  margin-bottom: var(--list-item-margin, 8px);
+  line-height: 1.6;
+}
+
+:global(.content-styles) li p {
+  margin: 0;
+  display: inline;
+}
+
+/* Task List Checkboxes */
+:global(.content-styles) input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0 8px 0 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bg-tertiary);
+  border: 1.5px solid var(--border);
+  border-radius: 3px;
+  position: relative;
+  flex-shrink: 0;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
+:global(.content-styles) input[type="checkbox"]:checked {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+:global(.content-styles) input[type="checkbox"]:checked::before {
+  content: '✓';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--bg-secondary);
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+:global(.content-styles) input[type="checkbox"]:disabled {
+  cursor: default;
+  opacity: 0.8;
+}
+
+/* Horizontal Rules */
+:global(.content-styles) hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+/* Links */
+:global(.content-styles) a {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: var(--link-underline-offset, 4px);
+  text-decoration-color: #999;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+:global(.content-styles) a:hover {
+  opacity: 0.75;
+}
+
+/* Tables */
+:global(.content-styles) table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 16px 0;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+:global(.content-styles) th,
+:global(.content-styles) td {
+  padding: 12px 16px;
+  text-align: left;
+  color: var(--text-primary);
+  vertical-align: top;
+  line-height: 1.6;
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+:global(.content-styles) th:last-child,
+:global(.content-styles) td:last-child {
+  border-right: none;
+}
+
+:global(.content-styles) tr:last-child td {
+  border-bottom: none;
+}
+
+:global(.content-styles) th {
+  font-weight: 600;
+  background: var(--bg-tertiary);
+  border-bottom: 2px solid var(--border);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+:global(.content-styles) tbody tr:hover {
+  background: var(--bg-tertiary);
+}
+
+/* Strong/Bold */
+:global(.content-styles) strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Emphasis/Italic */
+:global(.content-styles) em {
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+/* Print styles for content */
+@media print {
+
+  :global(.content-styles) p,
+  :global(.content-styles) li,
+  :global(.content-styles) td,
+  :global(.content-styles) th,
+  :global(.content-styles) strong,
+  :global(.content-styles) em {
+    color: black;
+  }
+
+  :global(.content-styles) code {
+    background: #f0f0f0;
+    color: black;
+  }
+
+  :global(.content-styles) pre {
+    background: #f5f5f5 !important;
+    border-color: #ddd;
+    page-break-inside: avoid;
+  }
+
+  :global(.content-styles) pre code {
+    color: black;
+  }
+
+  :global(.content-styles) table {
+    border-color: #333;
+    background: white;
+    page-break-inside: avoid;
+  }
+
+  :global(.content-styles) th {
+    background: #f0f0f0;
+    color: black;
+    border-bottom-color: #333;
+  }
+
+  :global(.content-styles) th,
+  :global(.content-styles) td {
+    border-right-color: #ddd;
+    border-bottom-color: #ddd;
+  }
+
+  :global(.content-styles) tbody tr:hover {
+    background: transparent;
+  }
+
+  :global(.content-styles) a {
+    color: #0066cc;
+    text-decoration-color: #0066cc;
+  }
+
+  :global(.content-styles) hr {
+    border-top-color: #333;
+  }
+}

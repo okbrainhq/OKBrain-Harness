@@ -1,0 +1,30 @@
+/* Styling for [source](URL) citations */
+.citation-source {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0px 4px;
+  margin: 0 2px;
+  text-decoration: none;
+  vertical-align: super;
+  transform: translateY(2px);
+  /* Slight adjustment for super-script feel */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.citation-source:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+/* Hide the literal text if we want to replace it with an icon, 
+   but user asked for "source" word so we keep it text based but styled as a badge */

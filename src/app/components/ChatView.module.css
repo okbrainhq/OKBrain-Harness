@@ -1,0 +1,380 @@
+/* Document Context Card */
+.documentContextCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  max-width: 400px;
+  transition: all 0.2s ease;
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+.documentContextCard:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-tertiary);
+}
+
+.documentContextCardStatic {
+  cursor: default;
+}
+
+.documentContextCardStatic:hover {
+  border-color: var(--border);
+  background: var(--bg-secondary);
+}
+
+.documentContextIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.documentContextContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.documentContextLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.documentContextTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Messages Wrapper - Empty State */
+.messagesWrapperEmpty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Empty State */
+.emptyStateCustom {
+  flex: 1;
+  margin: 0;
+  max-width: none;
+  justify-content: flex-start;
+  padding-top: 60px;
+  position: relative;
+}
+
+/* Location Toggle */
+.locationToggleContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.locationToggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.locationToggleBtn:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-tertiary);
+}
+
+.locationToggleBtnActive {
+  color: var(--accent);
+}
+
+/* Auto Margin Bottom Container */
+.autoMarginBottom {
+  margin-top: auto;
+  padding-bottom: 20px;
+}
+
+/* Home Action Buttons */
+.homeActionButtons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* Date Separator */
+.dateSeparator {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  opacity: 0.5;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.dateSeparatorFirst {
+  margin-top: 0;
+}
+
+/* User Timestamp */
+.userTimestamp {
+  text-align: right;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  opacity: 0.5;
+  margin-bottom: 2px;
+}
+
+/* Thoughts Spacing */
+.thoughtsSpacing {
+  margin-bottom: 12px;
+}
+
+/* Thinking Button (streaming) */
+.thinkingButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  transition: all 0.15s ease;
+}
+
+.thinkingButton:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-hover);
+}
+
+/* Thinking Arrow */
+.thinkingArrow {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  margin-left: 4px;
+}
+
+/* Expanded Thoughts Panel */
+.expandedThoughtsPanel {
+  max-height: 150px;
+  overflow-y: auto;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-top: 8px;
+  line-height: 1.5;
+  border: 1px solid var(--border);
+}
+
+.expandedThoughtsPanelTall {
+  max-height: 200px;
+}
+
+/* Typing Indicator */
+.typingIndicatorStyles {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 12px 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.typingIndicatorIcon {
+  display: flex;
+  align-items: center;
+}
+
+.messageStatusInline {
+  display: flex;
+  align-items: baseline;
+}
+
+/* Model Tag */
+.modelTag {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+/* Thought For Button (completed) */
+.thoughtForButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  transition: all 0.15s ease;
+  opacity: 0.85;
+}
+
+.thoughtForButton:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-hover);
+  opacity: 1;
+}
+
+/* Thought For Arrow */
+.thoughtForArrow {
+  font-size: 0.65rem;
+  opacity: 0.6;
+}
+
+/* Feedback */
+.feedbackContainer {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+  margin-left: -3px;
+  justify-content: flex-start;
+}
+
+.feedbackButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.feedbackButtonActive {
+  color: var(--text-secondary);
+  opacity: 1;
+}
+
+/* Action Container */
+.actionContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 16px 0;
+  margin-top: 8px;
+}
+
+/* Verify Group */
+.verifyGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.verifySplitButton {
+  display: flex;
+  position: relative;
+}
+
+.verifyButtonMainOverride {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  padding-right: 10px;
+}
+
+/* Verify Button Arrow */
+.verifyButtonArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-left: 1px solid var(--border-light);
+  border-radius: 0 4px 4px 0;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 0 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.verifyButtonArrow:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* Menu Overlay */
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+/* Verify Menu Dropdown */
+.verifyMenuDropdown {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 4px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 160px;
+  padding: 4px;
+  overflow: hidden;
+}
+
+/* Verify Menu Item */
+.verifyMenuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.verifyMenuItem:hover {
+  background: var(--bg-tertiary);
+}
+
+/* Verify Menu Check */
+.verifyMenuCheck {
+  opacity: 0.7;
+}

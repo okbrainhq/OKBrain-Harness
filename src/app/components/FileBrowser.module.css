@@ -1,0 +1,308 @@
+/* File Browser Styles */
+:global(.filebrowser-container) {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+:global(.filebrowser-editor) {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+:global(.filebrowser-header) {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 12px;
+}
+
+:global(.filebrowser-title-input) {
+  width: 100%;
+  padding: 8px 0;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  outline: none;
+}
+
+:global(.filebrowser-title-input::placeholder) {
+  color: var(--text-muted);
+}
+
+:global(.filebrowser-breadcrumb) {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+:global(.filebrowser-breadcrumb-segment) {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+
+:global(.filebrowser-breadcrumb-segment:hover) {
+  background: var(--bg-tertiary);
+  text-decoration: underline;
+}
+
+:global(.filebrowser-breadcrumb-separator) {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+:global(.filebrowser-breadcrumb-current) {
+  color: var(--text-primary);
+  font-weight: 500;
+  padding: 2px 4px;
+}
+
+:global(.filebrowser-listing) {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+:global(.filebrowser-entry) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+:global(.filebrowser-entry:last-child) {
+  border-bottom: none;
+}
+
+:global(.filebrowser-entry:hover) {
+  background: var(--bg-tertiary);
+}
+
+:global(.filebrowser-entry-icon) {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+:global(.filebrowser-entry-icon.directory) {
+  color: var(--accent);
+}
+
+:global(.filebrowser-entry-name) {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+:global(.filebrowser-entry-meta) {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  display: flex;
+  gap: 16px;
+}
+
+:global(.filebrowser-delete-btn) {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+:global(.filebrowser-delete-btn:hover) {
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+}
+
+:global(.filebrowser-delete-confirm) {
+  color: var(--error, #e55);
+}
+
+:global(.filebrowser-delete-confirm:hover) {
+  color: var(--error, #e55);
+}
+
+:global(.filebrowser-entry-action) {
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+:global(.filebrowser-entry:hover .filebrowser-entry-action) {
+  opacity: 1;
+}
+
+:global(.filebrowser-rename-input) {
+  flex: 1;
+  padding: 2px 6px;
+  border: 1px solid var(--accent);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: inherit;
+  border-radius: 4px;
+  outline: none;
+  min-width: 0;
+}
+
+:global(.filebrowser-empty) {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+:global(.filebrowser-error) {
+  padding: 20px;
+  text-align: center;
+  color: var(--error);
+  font-size: 0.9rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+/* Editor view */
+:global(.filebrowser-editor-header) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+:global(.filebrowser-back-btn) {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+}
+
+:global(.filebrowser-back-btn:hover) {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+:global(.filebrowser-editor-path) {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: monospace;
+  flex: 1;
+}
+
+:global(.filebrowser-save-status) {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+:global(.filebrowser-textarea) {
+  width: 100%;
+  min-height: 400px;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  flex: 1;
+  tab-size: 2;
+}
+
+:global(.filebrowser-textarea:focus) {
+  border-color: var(--accent);
+}
+
+:global(.filebrowser-save-bar) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Action icon buttons — match breadcrumb-segment height */
+:global(.filebrowser-action-btn) {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+  line-height: 1;
+  height: 24px;
+  width: 24px;
+  margin-bottom: 0;
+}
+
+:global(.filebrowser-action-btn:hover) {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  :global(.filebrowser-container) {
+    padding: 16px;
+  }
+
+  :global(.filebrowser-title-input) {
+    font-size: 1.25rem;
+  }
+
+  :global(.filebrowser-entry-meta) {
+    display: none;
+  }
+
+  :global(.filebrowser-entry-action) {
+    opacity: 1;
+  }
+}

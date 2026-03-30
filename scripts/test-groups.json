@@ -1,0 +1,90 @@
+{
+  "smoke": {
+    "tests": ["api.spec.ts", "filebrowser.spec.ts", "apps.spec.ts"],
+    "grep": "@smoke"
+  },
+  "chat": {
+    "tests": [
+      "chat.spec.ts",
+      "stop-generation.spec.ts",
+      "scroll-restore.spec.ts",
+      "multi-agent.spec.ts",
+      "chat-events-ui.spec.ts"
+    ]
+  },
+  "docs": {
+    "tests": [
+      "docs.spec.ts",
+      "doc-chat.spec.ts",
+      "doc-snapshots.spec.ts"
+    ]
+  },
+  "providers": {
+    "tests": [
+      "anthropic.spec.ts",
+      "gemini.spec.ts",
+      "xai.spec.ts",
+      "fireworks.spec.ts",
+      "ollama.spec.ts",
+      "openrouter.spec.ts"
+    ]
+  },
+  "tools": {
+    "tests": [
+      "event-tools.spec.ts",
+      "google-maps-tools.spec.ts",
+      "image-search.spec.ts",
+      "shell-command-ui.spec.ts",
+      "search-tools.spec.ts"
+    ]
+  },
+  "jobs": {
+    "tests": [
+      "jobs.spec.ts",
+      "yield-resume-kill-tool-job.spec.ts",
+      "background-tasks-tab.spec.ts"
+    ]
+  },
+  "facts": {
+    "tests": [
+      "facts.spec.ts",
+      "fact-extraction-quality.spec.ts",
+      "fact-sheet-edit.spec.ts",
+      "fact-sheet-merge.spec.ts",
+      "fact-search.spec.ts",
+      "recent-conversations.spec.ts"
+    ]
+  },
+  "ui": {
+    "tests": [
+      "layout.spec.ts",
+      "print.spec.ts",
+      "highlights.spec.ts",
+      "image-upload.spec.ts"
+    ]
+  },
+  "org": {
+    "tests": [
+      "folders.spec.ts",
+      "move-to-folder.spec.ts"
+    ]
+  },
+  "share": {
+    "tests": ["share.spec.ts"]
+  },
+  "location": {
+    "tests": ["location.spec.ts"]
+  },
+  "memory": {
+    "tests": ["memory.spec.ts"]
+  },
+  "filebrowser": {
+    "tests": ["filebrowser.spec.ts"]
+  },
+  "apps": {
+    "tests": ["apps.spec.ts", "app-sandbox.spec.ts", "app-privacy.spec.ts", "coding-tools.spec.ts", "coding-tools-e2e.spec.ts"]
+  },
+  "compaction": {
+    "tests": ["compaction.spec.ts"]
+  }
+}

@@ -1,0 +1,109 @@
+/* Search Tool Renderer */
+.searchCard {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.searchCard:hover {
+    background: var(--bg-tertiary);
+}
+
+/* Icon */
+.searchIcon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--text-muted);
+}
+
+.searchIcon.running {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.searchIcon.succeeded {
+    color: var(--text-muted);
+}
+
+.searchIcon.failed {
+    color: #ef4444;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Query text area */
+.searchQueries {
+    flex: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+    min-width: 0;
+    scrollbar-width: none;
+}
+
+.searchQueries::-webkit-scrollbar {
+    display: none;
+}
+
+.queryText {
+    font-weight: 500;
+}
+
+/* Expand arrow */
+.expandArrow {
+    flex-shrink: 0;
+    font-size: 0.65rem;
+    opacity: 0.5;
+    margin-left: 4px;
+}
+
+/* Results panel */
+.resultsPanel {
+    font-size: 0.8rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px 6px;
+    margin-top: -4px;
+    margin-bottom: 8px;
+    padding: 8px 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.resultItem {
+    display: block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 3px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.resultItem:hover {
+    color: var(--text-primary);
+}
+
+.resultDomain {
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    margin-left: 6px;
+}
